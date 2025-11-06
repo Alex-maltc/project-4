@@ -1,3 +1,4 @@
+# ...existing code...
 def hlavni_menu():
     """
     Zobrazí hlavní menu a vrátí volbu uživatele.
@@ -53,7 +54,7 @@ def odstranit_ukol(seznam_ukolu):
 
     # 2. Získání volby od uživatele
     try:
-        cislo_str = input("\nZadejte číslo úkolu, který chcete odstranit: ")
+        cislo_str = input("\nZadejte číslo úkolu, který chcete odstranit: ").strip()
         # Převod na 0-indexovaný seznam
         cislo_index = int(cislo_str) - 1
 
@@ -107,3 +108,4 @@ def main():
 # Spuštění hlavní funkce programu
 if __name__ == "__main__":
     main()
+# ...existing code...
