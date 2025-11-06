@@ -2,7 +2,7 @@ def hlavni_menu():
     """
     Zobrazí hlavní menu a vrátí volbu uživatele.
     """
-    print("\n--- Správce úkolů - Hlavní menu ---")
+    print("\nSprávce úkolů - Hlavní menu")
     print("1. Přidat nový úkol")
     print("2. Zobrazit všechny úkoly")
     print("3. Odstranit úkol")
@@ -24,17 +24,18 @@ def pridat_ukol(seznam_ukolu):
         "popis": popis
     }
     seznam_ukolu.append(novy_ukol)
-    print(f"Úkol '{nazev}' byl úspěšně přidán.")
+    print(f"Úkol '{nazev}' byl přidán.")
 
 def zobrazit_ukoly(seznam_ukolu):
     """
-    Zobrazí všechny úkoly v seznamu.
+    Zobrazí všechny úkoly v seznamu (podle obrázku).
     """
     print("\nSeznam úkolů:")
     
     if not seznam_ukolu:
         print("Seznam úkolů je prázdný.")
     else:
+        # Prochází seznam slovníků a tiskne index + název + popis
         for i, ukol in enumerate(seznam_ukolu, start=1):
             print(f"{i}. {ukol['nazev']} - {ukol['popis']}")
 
@@ -42,50 +43,44 @@ def odstranit_ukol(seznam_ukolu):
     """
     Nejprve zobrazí seznam úkolů a poté odstraní úkol na základě čísla.
     """
-    print("\n--- Odstranění úkolu ---")
-
-    # 1. Zobrazíme seznam, aby uživatel viděl, co maže
-    # Použijeme stejný kód jako v 'zobrazit_ukoly'
-    print("\nSeznam úkolů:")
+    # 1. Zobrazení seznamu
+    zobrazit_ukoly(seznam_ukolu)
+    
     if not seznam_ukolu:
-        print("Seznam úkolů je prázdný. Není co odstranit.")
-        return # Ukončíme funkci, pokud je seznam prázdný
+        # Většinou již zachyceno v zobrazit_ukoly, ale pro jistotu:
+        print("Není co odstranit.")
+        return 
 
-    for i, ukol in enumerate(seznam_ukolu, start=1):
-        print(f"{i}. {ukol['nazev']} - {ukol['popis']}")
-
-    # 2. Zeptáme se na číslo úkolu k odstranění
+    # 2. Získání volby od uživatele
     try:
         cislo_str = input("\nZadejte číslo úkolu, který chcete odstranit: ")
-        # Převedeme vstup na číslo a upravíme na 0-indexovaný seznam (číslo 1 je index 0)
+        # Převod na 0-indexovaný seznam
         cislo_index = int(cislo_str) - 1
 
-        # 3. Zkontrolujeme, zda je zadané číslo platné
+        # 3. Kontrola platnosti a odstranění
         if 0 <= cislo_index < len(seznam_ukolu):
-            # Použijeme .pop() k odstranění úkolu. 
-            # .pop() zároveň vrátí odstraněnou položku.
+            # Použijeme .pop() k odstranění a získání odstraněného úkolu
             odstraneny_ukol = seznam_ukolu.pop(cislo_index)
             
-            # Vypíšeme potvrzení
+            # Potvrzení (přesně jako na obrázku)
             print(f"Úkol '{odstraneny_ukol['nazev']}' byl odstraněn.")
         
         else:
-            # Uživatel zadal číslo mimo rozsah (např. 5, i když má jen 2 úkoly)
             print(f"Chyba: Číslo {cislo_str} není platné číslo v seznamu.")
 
     except ValueError:
-        # Uživatel zadal něco, co není číslo (např. "abc")
         print("Chyba: Nebylo zadáno platné číslo.")
     except Exception as e:
-        # Zachycení jakýchkoliv dalších neočekávaných chyb
         print(f"Došlo k neočekávané chybě: {e}")
 
 def main():
     """
-    Hlavní funkce, která řídí běh programu.
+    Hlavní funkce, která řídí běh programu ve smyčce.
     """
+    # Seznam pro ukládání úkolů (slovníků s názvem a popisem)
     ukoly = []
 
+    # Hlavní smyčka programu
     while True:
         volba = hlavni_menu()
         
@@ -103,7 +98,7 @@ def main():
 
         elif volba == '4':
             print("\nUkončuji program. Nashledanou!")
-            break 
+            break  # Ukončí smyčku a program
             
         else:
             print("\nNeplatná volba. Zadejte prosím číslo od 1 do 4.")
