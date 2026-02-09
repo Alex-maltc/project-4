@@ -2,8 +2,8 @@ TC01: Výběr platné možnosti z menu
 Popis: Ověření, že volba čísla 1 v hlavním menu správně spustí funkci pridat_ukol
 Vstupní podmínky: Program zobrazuje hlavní menu
 Kroky testu: 1. Spusťte program.
-                            2. Ověřte, že se zobrazuje hlavní menu s nabídkou voleb (např. "1 - Přidat úkol", "2 - Zobrazit úkoly" atd.).
-                            3. Zadejte číslo 1 a potvrďte stisknutím klávesy Enter
+             2. Ověřte, že se zobrazuje hlavní menu s nabídkou voleb (např. "1 - Přidat úkol", "2 - Zobrazit úkoly" atd.).
+             3. Zadejte číslo 1 a potvrďte stisknutím klávesy Enter
 Očekávaný výsledek: Program spustí funkci pridat_ukol().
 Skutečný výsledek: Funkce pridat_ukol() byla spuštěna a program zobrazil výzvu k zadání nového úkolu
 Stav: Pass
@@ -13,9 +13,9 @@ Název testu TC02: Správné přidání úkolu s popisem
 Popis: Ověření, že funkce pridat_ukol() správně přijme a uloží úkol i s popisem a následně je správně zobrazí.
 Vstupní podmínky: Seznam úkolů je prázdný.
 Kroky testu: 1. V hlavním menu zadejte 1 (Přidat úkol). 
-                       2. Zadejte Název: Testovací úkol 1 a potvrďte.
-                       3. Zadejte Popis: První testovací popis a potvrďte.
-                        4. V hlavním menu zadejte 2 (Zobrazit úkoly).
+             2. Zadejte Název: Testovací úkol 1 a potvrďte.
+             3. Zadejte Popis: První testovací popis a potvrďte.
+             4. V hlavním menu zadejte 2 (Zobrazit úkoly).
 Očekávaný výsledek: Program zobrazí potvrzení o přidání úkolu (Úkol 'Testovací úkol 1' byl přidán.) a v seznamu úkolů (volba 2) se zobrazí: 1. Testovací úkol 1 - První testovací popis
 Skutečný výsledek: Funkce pridat_ukol() byla spuštěna a program přidal a uložil úkol s popisem a pak správně zobrazil.
 Stav: Pass
@@ -25,7 +25,7 @@ Název testu TC03: Výběr neplatné volby v menu
 Popis: Ověření, že program správně upozorní uživatele a nespadne, když zadá neplatnou volbu v hlavním menu (např. písmeno nebo číslo mimo rozsah 1-4).
 Vstupní podmínky: Program zobrazuje hlavní menu.
 Kroky testu: 1. V hlavním menu zadejte písmeno 'A' a potvrďte.
-                       2. V hlavním menu zadejte číslo 5 a potvrďte.
+             2. V hlavním menu zadejte číslo 5 a potvrďte.
 Očekávaný výsledek: Program po každém neplatném vstupu zobrazí chybovou hlášku: Neplatná volba. Zadejte prosím číslo od 1 do 4. a vrátí se k zobrazení hlavního menu.
 Skutečný výsledek: Program nic nepřidal a zobrazil chybu
 Stav: Pass
@@ -46,7 +46,7 @@ Vstupní podmínky: Zadáme nečíselný vstup
 Kroky testu: 1. V hlavním menu zadejte volbu 3
              2. Zadáme abc
 Očekávaný výsledek: Chyba: Nebylo zadáno platné číslo.
-Skutečný výsledek: Program ukazal chybu a vratil se zpět do hlavního menu
+Skutečný výsledek: Program ukazal chybu
 Stav: Pass
 Poznámky: negativní test case
 
@@ -56,7 +56,7 @@ Vstupní podmínky: Zadáme nečíselný vstup
 Kroky testu: 1. V hlavním menu zadejte volbu 3
              2. Zadáme abc
 Očekávaný výsledek: Chyba: Nebylo zadáno platné číslo.
-Skutečný výsledek: Program ukazal chybu a vratil se zpět do hlavního menu
+Skutečný výsledek: Program ukazal chybu
 Stav: Pass
 Poznámky: negativní test case
 
@@ -64,10 +64,10 @@ Název testu TC06: Přidání úkolu s prázdným názvem
 Popis: Ověření, že po zadaní prazdného názvu bude chyba
 Vstupní podmínky: Zadáme prazdný vstup
 Kroky testu: 1. V hlavním menu zadejte volbu 1
-             2. Nechame prazdný název
+             2. Necháte prazdný název
              3. Popis: Test
-Očekávaný výsledek: Chyba: Název ani popis nesmí být prázdný!
-Skutečný výsledek: Program ukazal chybu a vratil se zpět do hlavního menu
+Očekávaný výsledek: Chyba: Název ani popis nesmí být prázdný! Úkol nebyl vytvořen.
+Skutečný výsledek: Program ukazal chybu 
 Stav: Pass
 Poznámky: negativní test case
 
@@ -79,5 +79,6 @@ Poznámky: negativní test case
 Název testu TC11
 :,Vstup,Očekávaný výsledek
 TC11,Ověření návratové hodnoty logiky,"Zavolání odstran_ukol_ze_seznamu([], ""1"")","Funkce vrátí (False, ""Číslo 1 není v seznamu."")"
+
 
 
