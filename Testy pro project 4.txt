@@ -76,9 +76,3 @@ Poznámky: negativní test case
 
 
 
-Název testu TC11
-:,Vstup,Očekávaný výsledek
-TC11,Ověření návratové hodnoty logiky,"Zavolání odstran_ukol_ze_seznamu([], ""1"")","Funkce vrátí (False, ""Číslo 1 není v seznamu."")"
-
-
-
