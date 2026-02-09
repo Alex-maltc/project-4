@@ -40,14 +40,38 @@ Skutečný výsledek: Program nic neodstranil a vratil se zpět do hlavního men
 Stav: Pass
 Poznámky: hraniční test case
 
-Název testu TC05: Úspěšné odstranění úkolu
-Popis: Ověření, že po zadání platného čísla indexu je úkol skutečně odstraněn ze seznamu.
-Vstupní podmínky: Zadáme platné číslo indexu
-Kroky testu: 1. V hlavním menu zadejte 3 (Odstranit úkol).
-Očekávaný výsledek: Program nepožaduje zadání čísla k odstranění, ale rovnou zobrazí zprávu: Seznam úkolů je prázdný. Není co odstranit. a vrátí se zpět do hlavního menu.
-Skutečný výsledek: Program nic neodstranil a vratil se zpět do hlavního menu
+Název testu TC05: Úspěšné odstranění úkolu - nečíselný vstup
+Popis: Ověření, že po zadaní odstraníme nečíselný vstup
+Vstupní podmínky: Zadáme nečíselný vstup
+Kroky testu: 1. V hlavním menu zadejte volbu 3
+             2. Zadáme abc
+Očekávaný výsledek: Chyba: Nebylo zadáno platné číslo.
+Skutečný výsledek: Program ukazal chybu a vratil se zpět do hlavního menu
 Stav: Pass
-Poznámky: hraniční test case
+Poznámky: negativní test case
+
+Název testu TC05: Úspěšné odstranění úkolu - nečíselný vstup
+Popis: Ověření, že po zadaní odstraníme nečíselný vstup
+Vstupní podmínky: Zadáme nečíselný vstup
+Kroky testu: 1. V hlavním menu zadejte volbu 3
+             2. Zadáme abc
+Očekávaný výsledek: Chyba: Nebylo zadáno platné číslo.
+Skutečný výsledek: Program ukazal chybu a vratil se zpět do hlavního menu
+Stav: Pass
+Poznámky: negativní test case
+
+Název testu TC06: Přidání úkolu s prázdným názvem
+Popis: Ověření, že po zadaní prazdného názvu bude chyba
+Vstupní podmínky: Zadáme prazdný vstup
+Kroky testu: 1. V hlavním menu zadejte volbu 1
+             2. Nechame prazdný název
+             3. Popis: Test
+Očekávaný výsledek: Chyba: Název ani popis nesmí být prázdný!
+Skutečný výsledek: Program ukazal chybu a vratil se zpět do hlavního menu
+Stav: Pass
+Poznámky: negativní test case
+
+
 
 
 
@@ -55,4 +79,5 @@ Poznámky: hraniční test case
 Název testu TC11
 :,Vstup,Očekávaný výsledek
 TC11,Ověření návratové hodnoty logiky,"Zavolání odstran_ukol_ze_seznamu([], ""1"")","Funkce vrátí (False, ""Číslo 1 není v seznamu."")"
+
 
