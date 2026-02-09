@@ -15,7 +15,7 @@ Vstupní podmínky: Seznam úkolů je prázdný.
 Kroky testu: 1. V hlavním menu zadejte 1 (Přidat úkol). 
                        2. Zadejte Název: Testovací úkol 1 a potvrďte.
                        3. Zadejte Popis: První testovací popis a potvrďte.
-4. V hlavním menu zadejte 2 (Zobrazit úkoly).
+                        4. V hlavním menu zadejte 2 (Zobrazit úkoly).
 Očekávaný výsledek: Program zobrazí potvrzení o přidání úkolu (Úkol 'Testovací úkol 1' byl přidán.) a v seznamu úkolů (volba 2) se zobrazí: 1. Testovací úkol 1 - První testovací popis
 Skutečný výsledek: Funkce pridat_ukol() byla spuštěna a program přidal a uložil úkol s popisem a pak správně zobrazil.
 Stav: Pass
@@ -40,4 +40,19 @@ Skutečný výsledek: Program nic neodstranil a vratil se zpět do hlavního men
 Stav: Pass
 Poznámky: hraniční test case
 
+Název testu TC05: Úspěšné odstranění úkolu
+Popis: Ověření, že po zadání platného čísla indexu je úkol skutečně odstraněn ze seznamu.
+Vstupní podmínky: Zadáme platné číslo indexu
+Kroky testu: 1. V hlavním menu zadejte 3 (Odstranit úkol).
+Očekávaný výsledek: Program nepožaduje zadání čísla k odstranění, ale rovnou zobrazí zprávu: Seznam úkolů je prázdný. Není co odstranit. a vrátí se zpět do hlavního menu.
+Skutečný výsledek: Program nic neodstranil a vratil se zpět do hlavního menu
+Stav: Pass
+Poznámky: hraniční test case
+
+
+
+
+Název testu TC11
+:,Vstup,Očekávaný výsledek
+TC11,Ověření návratové hodnoty logiky,"Zavolání odstran_ukol_ze_seznamu([], ""1"")","Funkce vrátí (False, ""Číslo 1 není v seznamu."")"
 
